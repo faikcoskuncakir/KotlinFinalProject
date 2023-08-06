@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/anasayfaFragment">
+
+    <fragment
+        android:id="@+id/anasayfaFragment"
+        android:name="com.example.yemeksiparisuygulamasikotlin.ui.fragment.AnasayfaFragment"
+        android:label="fragment_anasayfa"
+        tools:layout="@layout/fragment_anasayfa" >
+        <action
+            android:id="@+id/yemekDetayGecis"
+            app:destination="@id/detaySayfasiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detaySayfasiFragment"
+        android:name="com.example.yemeksiparisuygulamasikotlin.ui.fragment.DetaySayfasiFragment"
+        android:label="fragment_detay_sayfasi"
+        tools:layout="@layout/fragment_detay_sayfasi" >
+        <action
+            android:id="@+id/yemekSepetGecis"
+            app:destination="@id/sepetSayfasiFragment" />
+        <argument
+            android:name="yemek"
+            app:argType="com.example.yemeksiparisuygulamasikotlin.data.entity.Yemekler" />
+    </fragment>
+    <fragment
+        android:id="@+id/sepetSayfasiFragment"
+        android:name="com.example.yemeksiparisuygulamasikotlin.ui.fragment.SepetSayfasiFragment"
+        android:label="fragment_sepet_sayfasi"
+        tools:layout="@layout/fragment_sepet_sayfasi" >
+        <argument
+            android:name="sepetYemek"
+            app:argType="com.example.yemeksiparisuygulamasikotlin.data.entity.SepetYemekler" />
+    </fragment>
+</navigation>
